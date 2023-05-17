@@ -1,8 +1,6 @@
-import React from "react";
-
 const Home = () => {
   return (
-    <div>
+    <div className="lg:mx-48">
       <h1>Hello kids</h1>
     </div>
   );
