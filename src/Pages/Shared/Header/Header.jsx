@@ -25,23 +25,25 @@ const Header = () => {
       <li>
         <Link to="/allToys">All Toys</Link>
       </li>
-      <li>
-        <Link to="/myToys">My Toys</Link>
-      </li>
-      <li>
-        <Link to="/addToys">Add A Toy</Link>
-      </li>
+      {user && (
+        <li>
+          <Link to="/myToys">My Toys</Link>
+        </li>
+      )}
+      {user && (
+        <li>
+          <Link to="/addToys">Add A Toy</Link>
+        </li>
+      )}
       <li>
         <Link to="/blog">Blogs</Link>
       </li>
       {user && (
-        <div className="dropdown dropdown-end mx-3">
-          <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-            <div className="w-10 rounded-full">
-              <img src="" />
-            </div>
-          </label>
-        </div>
+        <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+          <div className="w-10 rounded-full" title={user.displayName}>
+            <img src={user.photoURL} />
+          </div>
+        </label>
       )}
       <li>
         {user ? (

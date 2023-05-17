@@ -1,7 +1,9 @@
+import Banner from "../../Banner/Banner";
+
 const Home = () => {
   return (
     <div className="lg:mx-48">
-      <h1>Hello kids</h1>
+      <Banner />
     </div>
   );
 };
