@@ -1,11 +1,19 @@
 // eslint-disable-next-line no-unused-vars
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Banner = () => {
+  useEffect(() => {
+    AOS.init();
+  }, []);
+
   return (
     <div
-      className="hero min-h-screen"
+      data-aos="fade-up"
+      data-aos-duration="1000"
+      className="hero min-h-screen banner"
       style={{
         backgroundImage: `url("../../../public/images/bg-header.png")`,
       }}
