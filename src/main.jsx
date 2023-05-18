@@ -13,11 +13,13 @@ import AddToys from "./Pages/AddToys/AddToys.jsx";
 import PrivateRoute from "./route/PrivateRoute.jsx";
 import MyToys from "./Pages/MyToys/MyToys.jsx";
 import AllToys from "./Pages/AllToys/AllToys.jsx";
+import Error from "./Pages/Shared/Error/Error.jsx";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
+    errorElement: <Error />,
     children: [
       {
         path: "/",
