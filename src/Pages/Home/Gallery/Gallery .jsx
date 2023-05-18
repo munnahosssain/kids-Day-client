@@ -11,12 +11,16 @@ const Gallery = () => {
   }, []);
 
   return (
-    <div className="bg-[#262626] ">
-      <div className="my-48 bg-[#262626] items-center justify-center flex mx-24">
-        <div className="grid grid-cols-4 gap-8">
+    <div className="lg:py-48 bg-[#262626]">
+      <div className="text-white text-center mb-12">
+        <h1 className="gallery-header">Kids Gallery</h1>
+        <p>Shop Kids Toys & Games Store goodies for your kids.</p>
+      </div>
+      <div className="items-center justify-center flex mx-24">
+        <div className="grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1 gap-8">
           {photos.map(photo => (
             <div key={photo._id}>
-              <div className="card w-96 bg-base-100 shadow-xl">
+              <div className="card lg:w-96 sm:w-72 bg-base-100 shadow-xl">
                 <figure className="px-10 pt-10">
                   <img
                     src={photo.image}
