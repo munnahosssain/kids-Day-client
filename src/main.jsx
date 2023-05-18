@@ -9,6 +9,10 @@ import AuthProvider from "./Provider/AuthProvider.jsx";
 import Login from "./Pages/Shared/Login/Login.jsx";
 import Register from "./Pages/Shared/Register/Register.jsx";
 import Blog from "./Pages/Blog/Blog.jsx";
+import AddToys from "./Pages/AddToys/AddToys.jsx";
+import PrivateRoute from "./route/PrivateRoute.jsx";
+import MyToys from "./Pages/MyToys/MyToys.jsx";
+import AllToys from "./Pages/AllToys/AllToys.jsx";
 
 const router = createBrowserRouter([
   {
@@ -21,15 +25,23 @@ const router = createBrowserRouter([
       },
       {
         path: "/allToys",
-        element: <div>About</div>,
+        element: <AllToys />,
       },
       {
         path: "/myToys",
-        element: <div>About</div>,
+        element: (
+          <PrivateRoute>
+            <MyToys />
+          </PrivateRoute>
+        ),
       },
       {
         path: "/addToys",
-        element: <div>About</div>,
+        element: (
+          <PrivateRoute>
+            <AddToys />,
+          </PrivateRoute>
+        ),
       },
       {
         path: "/blog",
