@@ -16,11 +16,11 @@ const Gallery = () => {
         <h1 className="gallery-header">Kids Gallery</h1>
         <p>Shop Kids Toys & Games Store goodies for your kids.</p>
       </div>
-      <div className="items-center justify-center flex mx-24">
-        <div className="grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1 gap-8">
+      <div className="items-center justify-center flex lg:mx-24">
+        <div className="grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1 gap-8 sm:gap-4">
           {photos.map(photo => (
             <div key={photo._id}>
-              <div className="card lg:w-96 sm:w-72 bg-base-100 shadow-xl">
+              <div className="card lg:w-96 sm:w-80 bg-base-100 shadow-xl">
                 <figure className="px-10 pt-10">
                   <img
                     src={photo.image}
