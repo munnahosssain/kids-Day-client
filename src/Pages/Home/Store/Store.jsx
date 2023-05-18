@@ -11,7 +11,7 @@ const Store = () => {
         <p className="text-2xl m-2 text-[#9f9f9f]">
           Shop Juno Toy & Games Store goodies for your kids.
         </p>
-        <div className="grid grid-cols-3 my-6">
+        <div className="grid grid-cols-3 my-6 p-2">
           <div className="col-span-2">
             <img className="lg:p-6" src={image_1} alt="baby image" />
           </div>
@@ -28,7 +28,7 @@ const Store = () => {
             />
           </div>
         </div>
-        <p>
+        <p className="p-4">
           Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
           minim veniam, quis nostrud exercitation ullamco laboris nisi ut

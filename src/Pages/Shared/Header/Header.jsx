@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import logo from "../../../../public/images/logo.png";
 import { useContext } from "react";
 import { AuthContext } from "../../../Provider/AuthProvider";
@@ -20,26 +20,51 @@ const Header = () => {
   const navMenu = (
     <>
       <li>
-        <Link to="/">Home</Link>
+        <NavLink
+          to="/"
+          className={({ isActive }) => (isActive ? "active" : "default")}
+        >
+          Home
+        </NavLink>
       </li>
       <li>
-        <Link to="/allToys">All Toys</Link>
+        <NavLink
+          to="/blog"
+          className={({ isActive }) => (isActive ? "active" : "default")}
+        >
+          Blogs
+        </NavLink>
+      </li>
+      <li>
+        <NavLink
+          to="/allToys"
+          className={({ isActive }) => (isActive ? "active" : "default")}
+        >
+          All Toys
+        </NavLink>
       </li>
       {user && (
         <li>
-          <Link to="/myToys">My Toys</Link>
+          <NavLink
+            to="/myToys"
+            className={({ isActive }) => (isActive ? "active" : "default")}
+          >
+            My Toys
+          </NavLink>
         </li>
       )}
       {user && (
         <li>
-          <Link to="/addToys">Add A Toy</Link>
+          <NavLink
+            to="/addToys"
+            className={({ isActive }) => (isActive ? "active" : "default")}
+          >
+            Add A Toy
+          </NavLink>
         </li>
       )}
-      <li>
-        <Link to="/blog">Blogs</Link>
-      </li>
       {user && (
-        <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+        <label tabIndex={0} className="btn btn-ghost btn-circle avatar mx-4">
           <div className="w-10 rounded-full" title={user.displayName}>
             <img src={user.photoURL} />
           </div>
@@ -47,9 +72,16 @@ const Header = () => {
       )}
       <li>
         {user ? (
-          <button onClick={handleLogOut}>LogOut</button>
+          <button className="font-medium mt-2" onClick={handleLogOut}>
+            LogOut
+          </button>
         ) : (
-          <Link to="/login">Login</Link>
+          <NavLink
+            to="/login"
+            className={({ isActive }) => (isActive ? "active" : "default")}
+          >
+            Login
+          </NavLink>
         )}
       </li>
     </>
@@ -78,7 +110,7 @@ const Header = () => {
             </label>
             <ul
               tabIndex={0}
-              className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
+              className="menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
             >
               {navMenu}
             </ul>
@@ -89,7 +121,7 @@ const Header = () => {
         </div>
         <div className="navbar-end">
           <div className="navbar-center hidden lg:flex">
-            <ul className="menu menu-horizontal px-1">{navMenu}</ul>
+            <ul className="menu-horizontal px-1">{navMenu}</ul>
           </div>
         </div>
       </div>
