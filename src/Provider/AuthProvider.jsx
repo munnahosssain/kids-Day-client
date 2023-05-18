@@ -30,14 +30,17 @@ const AuthProvider = ({ children }) => {
   };
 
   const userLogin = (email, password) => {
+    setLoading(true);
     signInWithEmailAndPassword(auth, email, password);
   };
 
   const createUser = (email, password) => {
+    setLoading(true);
     return createUserWithEmailAndPassword(auth, email, password);
   };
 
   const googleSignUp = () => {
+    setLoading(true);
     return signInWithPopup(auth, provider);
   };
 

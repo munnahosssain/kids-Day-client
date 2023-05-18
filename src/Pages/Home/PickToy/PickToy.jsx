@@ -13,7 +13,7 @@ const PickToy = () => {
       <div className="lg:mx-48">
         <div className="text-neutral-content">
           <div className="lg:grid grid-cols-2 gap-4 items-center">
-            <div className="lg:mt-64">
+            <div className="lg:mt-36">
               <img src={boys} alt="pongTa boys" />
             </div>
             <div className="p-4">
