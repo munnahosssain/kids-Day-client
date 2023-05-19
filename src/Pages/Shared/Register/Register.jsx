@@ -13,8 +13,6 @@ const Register = () => {
     const email = form.email.value;
     const password = form.password.value;
 
-    createProfile(name, photo);
-
     createUser(email, password)
       .then(result => {
         const user = result.user;
