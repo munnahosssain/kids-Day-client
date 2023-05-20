@@ -7,7 +7,7 @@ const MyToys = () => {
   const [toys, seToys] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/myToys/${user?.email}`)
+    fetch(`https://kids-day-server.vercel.app/myToys/${user?.email}`)
       .then(res => res.json())
       .then(data => seToys(data));
   }, [user]);
@@ -15,13 +15,13 @@ const MyToys = () => {
 
   return (
     <div className="lg:mx-24">
-      <div className="my-6 text-center">
+      {/* <div className="my-6 text-center">
         <input
           type="text"
           placeholder="Find toy here"
           className="input input-bordered input-accent w-full max-w-xl"
         />
-      </div>
+      </div> */}
       <table className="table table-zebra w-full">
         <thead>
           <tr>
@@ -31,7 +31,8 @@ const MyToys = () => {
             <th>Sub category</th>
             <th>Price</th>
             <th>Quantity</th>
-            <th></th>
+            <th>Update</th>
+            <th>Action</th>
           </tr>
         </thead>
         <tbody>

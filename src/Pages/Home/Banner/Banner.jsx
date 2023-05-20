@@ -1,4 +1,3 @@
-// eslint-disable-next-line no-unused-vars
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import AOS from "aos";
@@ -11,7 +10,7 @@ const Banner = () => {
 
   return (
     <div
-      data-aos="fade-up"
+      data-aos="zoom-in-up"
       data-aos-duration="1000"
       className="hero min-h-screen banner"
       style={{

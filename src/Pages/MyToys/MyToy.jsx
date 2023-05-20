@@ -6,7 +6,15 @@ const MyToy = ({ toy, index }) => {
     toy;
 
   const handleDelete = id => {
-    console.log("Deleted", id);
+    fetch(`http://localhost:5000/deleteToys/${id}`, {
+      method: "DELETE",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(),
+    })
+      .then(res => res.json())
+      .then(data => console.log(data));
   };
 
   return (
@@ -16,9 +24,21 @@ const MyToy = ({ toy, index }) => {
       <td>{name}</td>
       <td>{sub_category}</td>
       <td>${price}</td>
-      <td>{available_quantity}</td>
+      <td>{available_quantity} Items</td>
       <td>
-        <button onClick={() => handleDelete(_id)}>Delete</button>
+        <Link to={`/toyUpdate/${_id}`}>
+          <button className="btn btn-sm btn-outline btn-info font-bold">
+            Update
+          </button>
+        </Link>
+      </td>
+      <td>
+        <button
+          onClick={() => handleDelete(_id)}
+          className="btn btn-sm btn-outline btn-info font-bold"
+        >
+          Delete
+        </button>
       </td>
     </tr>
   );
