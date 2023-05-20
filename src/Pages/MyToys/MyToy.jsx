@@ -1,20 +1,40 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import swal from "sweetalert";
 
 const MyToy = ({ toy, index }) => {
   const { _id, seller_name, name, sub_category, price, available_quantity } =
     toy;
 
   const handleDelete = id => {
-    fetch(`http://localhost:5000/deleteToys/${id}`, {
-      method: "DELETE",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(),
-    })
-      .then(res => res.json())
-      .then(data => console.log(data));
+    swal({
+      title: "Are you sure?",
+      text: "Once deleted, you will not be able to recover this data!",
+      icon: "warning",
+      buttons: true,
+      dangerMode: true,
+    }).then(willDelete => {
+      if (willDelete) {
+        fetch(`http://localhost:5000/deleteToys/${id}`, {
+          method: "DELETE",
+          headers: {
+            "Content-Type": "application/json",
+          },
+        })
+          .then(res => res.json())
+          .then(data => {
+            swal("Your data file has been deleted!", {
+              icon: "success",
+            });
+            console.log(data);
+          })
+          .catch(error => {
+            console.log(error);
+          });
+      } else {
+        swal("Your Data file is safe!");
+      }
+    });
   };
 
   return (

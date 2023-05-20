@@ -11,28 +11,30 @@ const MyToys = () => {
       .then(res => res.json())
       .then(data => seToys(data));
   }, [user]);
-  // console.log(toys);
 
   return (
     <div className="lg:mx-24">
-      {/* <div className="my-6 text-center">
-        <input
-          type="text"
-          placeholder="Find toy here"
-          className="input input-bordered input-accent w-full max-w-xl"
-        />
-      </div> */}
+      <div className="my-6 flex items-center justify-end">
+        <p className="text-black mr-6">Sort by:</p>
+        <select className="select hover: rounded-none select-sm select-accent w-48 max-w-xs">
+          <option disabled selected>
+            Default
+          </option>
+          <option>Low to High (Price)</option>
+          <option>High to Low (Price)</option>
+        </select>
+      </div>
       <table className="table table-zebra w-full">
         <thead>
-          <tr>
-            <th></th>
-            <th>Seller</th>
-            <th>Toy Name</th>
-            <th>Sub category</th>
-            <th>Price</th>
-            <th>Quantity</th>
-            <th>Update</th>
-            <th>Action</th>
+          <tr className="bg-gray-200">
+            <th>S/R</th>
+            <th className="text-blue-500">Seller</th>
+            <th className="text-blue-500">Toy Name</th>
+            <th className="text-blue-500">Sub category</th>
+            <th className="text-blue-500">Price</th>
+            <th className="text-blue-500">Quantity</th>
+            <th className="text-blue-500">Update</th>
+            <th className="text-blue-500">Action</th>
           </tr>
         </thead>
         <tbody>
