@@ -1,9 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const AllToy = ({ toy, index }) => {
+const MyToy = ({ toy, index }) => {
   const { _id, seller_name, name, sub_category, price, available_quantity } =
     toy;
+
+  const handleDelete = id => {
+    console.log("Deleted", id);
+  };
 
   return (
     <tr>
@@ -14,15 +18,10 @@ const AllToy = ({ toy, index }) => {
       <td>${price}</td>
       <td>{available_quantity}</td>
       <td>
-        <Link
-          to={`/details/${_id}`}
-          className="btn btn-primary pentagon-button"
-        >
-          View Details
-        </Link>
+        <button onClick={() => handleDelete(_id)}>Delete</button>
       </td>
     </tr>
   );
 };
 
-export default AllToy;
+export default MyToy;

@@ -14,6 +14,7 @@ import PrivateRoute from "./route/PrivateRoute.jsx";
 import MyToys from "./Pages/MyToys/MyToys.jsx";
 import AllToys from "./Pages/AllToys/AllToys.jsx";
 import Error from "./Pages/Shared/Error/Error.jsx";
+import ViewDetails from "./Pages/AllToys/ViewDetails.jsx";
 
 const router = createBrowserRouter([
   {
@@ -29,6 +30,16 @@ const router = createBrowserRouter([
         path: "/allToys",
         element: <AllToys />,
         loader: () => fetch("https://kids-day-server.vercel.app/allToys"),
+      },
+      {
+        path: "/details/:id",
+        element: (
+          <PrivateRoute>
+            <ViewDetails />
+          </PrivateRoute>
+        ),
+        loader: ({ params }) =>
+          fetch(`https://kids-day-server.vercel.app/allToys/${params.id}`),
       },
       {
         path: "/myToys",
