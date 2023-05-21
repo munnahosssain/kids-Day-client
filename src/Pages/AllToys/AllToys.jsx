@@ -34,13 +34,13 @@ const AllToys = () => {
       <table className="table table-zebra w-full">
         <thead>
           <tr>
-            <th></th>
+            <th>S/N</th>
             <th>Seller</th>
             <th>Toy Name</th>
             <th>Sub category</th>
             <th>Price</th>
             <th>Quantity</th>
-            <th></th>
+            <th>Details</th>
           </tr>
         </thead>
         <tbody>

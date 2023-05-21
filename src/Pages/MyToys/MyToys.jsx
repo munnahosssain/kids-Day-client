@@ -5,6 +5,8 @@ import MyToy from "./MyToy";
 const MyToys = () => {
   const { user } = useContext(AuthContext);
   const [toys, seToys] = useState([]);
+  const [items, setItems] = useState(user);
+  const [ascending, setAscending] = useState(true);
 
   useEffect(() => {
     fetch(`https://kids-day-server.vercel.app/myToys/${user?.email}`)
@@ -12,12 +14,30 @@ const MyToys = () => {
       .then(data => seToys(data));
   }, [user]);
 
+  const handleSort = e => {
+    const selectedOption = e.target.value;
+    let sortedItems = [...items];
+
+    if (selectedOption === "Low to High (Price)") {
+      sortedItems.sort((a, b) => a - b); // Ascending order
+    } else if (selectedOption === "High to Low (Price)") {
+      sortedItems.sort((a, b) => b - a); // Descending order
+    }
+
+    setItems(sortedItems);
+    setAscending(selectedOption === "Low to High (Price)");
+  };
+
   return (
     <div className="lg:mx-24">
       <div className="my-6 flex items-center justify-end">
         <p className="text-black mr-6">Sort by:</p>
-        <select className="select hover: rounded-none select-sm select-accent w-48 max-w-xs">
-          <option disabled selected>
+        <select
+          defaultValue=""
+          onChange={handleSort}
+          className="select hover: rounded-none select-sm select-accent w-48 max-w-xs"
+        >
+          <option disabled value="">
             Default
           </option>
           <option>Low to High (Price)</option>
