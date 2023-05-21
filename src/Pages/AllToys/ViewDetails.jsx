@@ -3,6 +3,7 @@ import { useLoaderData } from "react-router-dom";
 import StarRatings from "react-star-ratings";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
+import useTitle from "../../hooks/useTitle";
 
 const ViewDetails = () => {
   const details = useLoaderData();
@@ -15,6 +16,8 @@ const ViewDetails = () => {
     available_quantity,
     description,
   } = details;
+
+  useTitle("View Details");
 
   return (
     <div

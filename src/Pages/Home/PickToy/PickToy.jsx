@@ -1,6 +1,7 @@
 import React from "react";
 import boys from "../../../../public/images/boys.png";
 import { Link } from "react-router-dom";
+import useTitle from "../../../hooks/useTitle";
 
 const PickToy = () => {
   return (

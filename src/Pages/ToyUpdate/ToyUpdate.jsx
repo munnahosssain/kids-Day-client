@@ -1,6 +1,7 @@
 import React from "react";
 import { useLoaderData } from "react-router-dom";
 import swal from "sweetalert";
+import useTitle from "../../hooks/useTitle";
 
 const ToyUpdate = () => {
   const updateToys = useLoaderData();
@@ -64,6 +65,8 @@ const ToyUpdate = () => {
         }
       });
   };
+
+  useTitle("Update data");
 
   return (
     <div className="flex items-center justify-center">

@@ -4,7 +4,7 @@ import logo from "../../../../public/images/logo.png";
 const Footer = () => {
   return (
     <div className="bg-base-200">
-      <div className="mx-48 ">
+      <div className="lg:mx-48 ">
         <footer className="footer p-10  text-base-content">
           <div>
             <span className="footer-title">Services</span>

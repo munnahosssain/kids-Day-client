@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import AllToy from "./AllToy";
+import useTitle from "../../hooks/useTitle";
 
 const AllToys = () => {
   const allToys = useLoaderData();
@@ -17,6 +18,8 @@ const AllToys = () => {
     );
     setFilteredToys(filteredResults);
   };
+
+  useTitle("All Toys");
 
   return (
     <div className="lg:mx-24">

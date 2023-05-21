@@ -2,6 +2,7 @@ import React from "react";
 import image_1 from "../../../../public/images/image-1.jpg";
 import image_2 from "../../../../public/images/image-2.jpg";
 import image_3 from "../../../../public/images/image-3.jpg";
+import useTitle from "../../../hooks/useTitle";
 
 const Store = () => {
   return (

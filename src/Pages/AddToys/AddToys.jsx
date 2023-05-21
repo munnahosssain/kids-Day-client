@@ -1,5 +1,6 @@
 import React from "react";
 import swal from "sweetalert";
+import useTitle from "../../hooks/useTitle";
 
 const AddToys = () => {
   const handleAdded = event => {
@@ -42,6 +43,8 @@ const AddToys = () => {
         form.reset();
       });
   };
+
+  useTitle("Add A Toys");
 
   return (
     <div className="flex items-center justify-center">

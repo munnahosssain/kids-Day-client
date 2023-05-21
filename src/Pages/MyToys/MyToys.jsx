@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
 import MyToy from "./MyToy";
+import useTitle from "../../hooks/useTitle";
 
 const MyToys = () => {
   const { user } = useContext(AuthContext);
@@ -19,14 +20,16 @@ const MyToys = () => {
     let sortedItems = [...items];
 
     if (selectedOption === "Low to High (Price)") {
-      sortedItems.sort((a, b) => a - b); // Ascending order
+      sortedItems.sort((a, b) => a - b);
     } else if (selectedOption === "High to Low (Price)") {
-      sortedItems.sort((a, b) => b - a); // Descending order
+      sortedItems.sort((a, b) => b - a);
     }
 
     setItems(sortedItems);
     setAscending(selectedOption === "Low to High (Price)");
   };
+
+  useTitle("My Toys");
 
   return (
     <div className="lg:mx-24">

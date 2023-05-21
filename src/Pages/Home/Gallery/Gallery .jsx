@@ -1,5 +1,6 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useEffect, useState } from "react";
+import useTitle from "../../../hooks/useTitle";
 
 const Gallery = () => {
   const [photos, setPhotos] = useState([]);
