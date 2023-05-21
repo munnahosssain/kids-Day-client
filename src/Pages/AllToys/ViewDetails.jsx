@@ -38,7 +38,7 @@ const ViewDetails = () => {
             <p className="card-title">{seller_email}</p>
             <p className="card-title">Price: ${price} Only</p>
             <StarRatings
-              rating={rating}
+              rating={parseFloat(rating)}
               starRatedColor="green"
               numberOfStars={5}
               name="rating"

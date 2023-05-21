@@ -1,4 +1,5 @@
 import React from "react";
+import swal from "sweetalert";
 
 const AddToys = () => {
   const handleAdded = event => {
@@ -7,26 +8,41 @@ const AddToys = () => {
     const name = form.name.value;
     const seller_name = form.seller_name.value;
     const seller_email = form.seller_email.value;
-    const category = form.category.value;
+    const sub_category = form.category.value;
     const price = form.price.value;
     const rating = form.rating.value;
-    const quantity = form.quantity.value;
-    const picture = form.picture.value;
-    const descriptions = form.descriptions.value;
+    const available_quantity = form.quantity.value;
+    const picture_url = form.picture.value;
+    const description = form.description.value;
 
     const updateData = {
       name,
       seller_name,
       seller_email,
-      category,
+      sub_category,
       price,
       rating,
-      quantity,
-      picture,
-      descriptions,
+      available_quantity,
+      picture_url,
+      description,
     };
-    console.log(updateData);
+    fetch("https://kids-day-server.vercel.app/allToys", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(updateData),
+    })
+      .then(res => res.json())
+      .then(data => {
+        console.log(data);
+        if (data.insertedId) {
+          swal("Success Added!", "Your data added!", "success");
+        }
+        form.reset();
+      });
   };
+
   return (
     <div className="flex items-center justify-center">
       <form onSubmit={handleAdded}>
@@ -37,6 +53,7 @@ const AddToys = () => {
                 <span className="label-text">Your name</span>
               </label>
               <input
+                required
                 type="text"
                 name="name"
                 placeholder="Your name"
@@ -47,6 +64,7 @@ const AddToys = () => {
               </label>
               <input
                 type="text"
+                required
                 name="seller_name"
                 placeholder="Seller Name"
                 className="input w-full max-w-xl input-info"
@@ -58,12 +76,14 @@ const AddToys = () => {
               </label>
               <input
                 type="email"
+                required
                 name="seller_email"
                 placeholder="Seller Email"
                 className="input w-full max-w-xl input-info"
               />
               <input
                 type="text"
+                required
                 name="category"
                 placeholder="Category"
                 className="input w-full max-w-xl input-info mt-6"
@@ -77,6 +97,7 @@ const AddToys = () => {
               </label>
               <input
                 type="number"
+                required
                 name="price"
                 placeholder="Price"
                 className="input w-full max-w-xl input-info"
@@ -85,7 +106,8 @@ const AddToys = () => {
                 <span className="label-text">Rating</span>
               </label>
               <input
-                type="number"
+                type="text"
+                required
                 name="rating"
                 placeholder="Rating"
                 className="input w-full max-w-xl input-info"
@@ -97,6 +119,7 @@ const AddToys = () => {
               </label>
               <input
                 type="number"
+                required
                 name="quantity"
                 placeholder="Quantity"
                 className="input w-full max-w-xl  input-info"
@@ -106,6 +129,7 @@ const AddToys = () => {
               </label> */}
               <input
                 type="text"
+                required
                 name="picture"
                 placeholder="Picture"
                 className="input w-full max-w-xl input-info mt-6"
@@ -118,8 +142,9 @@ const AddToys = () => {
         </label>
         <textarea
           type="text"
-          name="descriptions"
-          placeholder="Descriptions"
+          required
+          name="description"
+          placeholder="Description"
           className="input input-bordered w-full h-24"
         ></textarea>
         <button type="submit" className="btn btn-wide w-full font-bold mt-4">
