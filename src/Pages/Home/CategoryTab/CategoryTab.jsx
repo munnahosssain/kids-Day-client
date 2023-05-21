@@ -1,9 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import StarRatings from "react-star-ratings";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
+import { AuthContext } from "../../../Provider/AuthProvider";
+import swal from "sweetalert";
 
 const CategoryTab = () => {
+  const { user } = useContext(AuthContext);
   const [data, setData] = useState([]);
   const [tab, setTab] = useState("Engineering_tools");
 
@@ -15,6 +19,18 @@ const CategoryTab = () => {
 
   const handleTab = tabName => {
     setTab(tabName);
+  };
+
+  const handleAlert = () => {
+    if (!user) {
+      swal({
+        title: "Please Login first?",
+        // text: "/Once deleted, you will not be able to recover this imaginary file!",
+        icon: "warning",
+        buttons: true,
+        dangerMode: true,
+      });
+    }
   };
 
   return (
@@ -53,7 +69,12 @@ const CategoryTab = () => {
                       name="rating"
                     />
                     <div className="card-actions">
-                      <button className="btn btn-wide">View details</button>
+                      <Link
+                        onClick={handleAlert}
+                        to={`/categoryDetails/${dt._id}`}
+                      >
+                        <button className="btn btn-wide">View details</button>
+                      </Link>
                     </div>
                   </div>
                 </div>
@@ -84,7 +105,12 @@ const CategoryTab = () => {
                       name="rating"
                     />
                     <div className="card-actions">
-                      <button className="btn btn-wide">View details</button>
+                      <Link
+                        onClick={handleAlert}
+                        to={`/categoryDetails/${dt._id}`}
+                      >
+                        <button className="btn btn-wide">View details</button>
+                      </Link>
                     </div>
                   </div>
                 </div>
@@ -115,7 +141,12 @@ const CategoryTab = () => {
                       name="rating"
                     />
                     <div className="card-actions">
-                      <button className="btn btn-wide">View details</button>
+                      <Link
+                        onClick={handleAlert}
+                        to={`/categoryDetails/${dt._id}`}
+                      >
+                        <button className="btn btn-wide">View details</button>
+                      </Link>
                     </div>
                   </div>
                 </div>

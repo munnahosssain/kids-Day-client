@@ -5,7 +5,7 @@ const Blog = () => {
   useTitle("Blog");
 
   return (
-    <div className="mt-12 p-2">
+    <div className="mt-12 p-2 mb-12">
       <div className="max-w-xl sm:mx-auto lg:max-w-2xl">
         <div className="max-w-xl mb-10 md:mx-auto sm:text-center lg:max-w-2xl md:mb-12">
           <h2 className="max-w-lg mb-6 font-sans text-3xl font-bold leading-none tracking-tight text-gray-900 sm:text-4xl md:mx-auto">
@@ -53,15 +53,15 @@ const Blog = () => {
                 where should we store them on the client-side?
               </p>
               <p className="text-gray-700">
-                Well, the way they make shows is, they make one show. That
-                show's called a pilot.
-                <br />
-                <br />
-                Then they show that show to the people who make shows, and on
-                the strength of that one show they decide if they're going to
-                make more shows. Some pilots get picked and become television
-                programs.Some don't, become nothing. She starred in one of the
-                ones that became nothing.
+                An access token is a credential that is issued to a user after
+                they successfully authenticate themselves. It is a short-lived
+                token that typically has an expiration time. A refresh token is
+                a long-lived token that is also issued to a user during the
+                authentication process. Unlike the access token, the refresh
+                token is typically valid for a longer period, such as days or
+                weeks. An access token and a refresh token are commonly used in
+                authentication systems to grant and manage user access to
+                protected resources.
               </p>
             </div>
             <div>
@@ -69,9 +69,16 @@ const Blog = () => {
                 Compare SQL and NoSQL databases?
               </p>
               <p className="text-gray-700">
-                A flower in my garden, a mystery in my panties. Heart attack
-                never stopped old Big Bear. I didn't even know we were calling
-                him Big Bear.
+                SQL and NoSQL databases are two distinct types of database
+                management systems used for storing and retrieving data. SQL
+                databases, based on the relational model, store data in
+                structured tables with predefined schemas.On the other hand,
+                NoSQL databases are designed to handle large-scale,
+                unstructured, and semi-structured data. They offer flexible
+                schemas and prioritize scalability, high availability, and
+                performance over strict data consistency. The choice between SQL
+                and NoSQL depends on the specific requirements of the
+                application.
               </p>
             </div>
           </div>
@@ -81,12 +88,17 @@ const Blog = () => {
                 What is express js? What is Nest JS (google it)?
               </p>
               <p className="text-gray-700">
-                A business big enough that it could be listed on the NASDAQ goes
-                belly up. Disappears!
-                <br />
-                <br />
-                It ceases to exist without me. No, you clearly don't know who
-                you're talking to, so let me clue you in.
+                Express.js is a minimalist and flexible web application
+                framework for Node.js. It provides a simple and straightforward
+                approach to building web servers and APIs. It offers a wide
+                range of middleware and plugins that simplify tasks such as
+                routing, request handling, and response generation. NestJS is a
+                progressive, TypeScript-based web framework built on top of
+                Node.js. It draws inspiration from Angular, sharing similarities
+                in terms of structure and concepts.NestJS offers powerful
+                features such as routing, middleware support, dependency
+                injection, and extensive integration with various libraries and
+                technologies.
               </p>
             </div>
             <div>
@@ -94,10 +106,14 @@ const Blog = () => {
                 What is MongoDB aggregate and how does it work (google it)?
               </p>
               <p className="text-gray-700">
-                This is not about revenge. This is about justice. A lot of
-                things can change in twelve years, Admiral. Well, that's
-                certainly good to know. About four years. I got tired of hearing
-                how young I looked.
+                The MongoDB aggregate function is a powerful feature that
+                enables advanced data aggregation operations on collections. It
+                works by utilizing a pipeline consisting of multiple stages,
+                where each stage performs a specific operation on the data.
+                Aggregation operators such as $sum, $avg, $max, $min, $concat,
+                and more are used to perform computations on fields. Expressions
+                and functions can also be employed to perform complex data
+                transformations.
               </p>
             </div>
           </div>

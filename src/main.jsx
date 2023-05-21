@@ -16,6 +16,7 @@ import AllToys from "./Pages/AllToys/AllToys.jsx";
 import Error from "./Pages/Shared/Error/Error.jsx";
 import ViewDetails from "./Pages/AllToys/ViewDetails.jsx";
 import ToyUpdate from "./Pages/ToyUpdate/ToyUpdate.jsx";
+import CategoryDetails from "./Pages/Home/CategoryDetails/CategoryDetails";
 
 const router = createBrowserRouter([
   {
@@ -63,6 +64,16 @@ const router = createBrowserRouter([
         element: <ToyUpdate />,
         loader: ({ params }) =>
           fetch(`https://kids-day-server.vercel.app/allToys/${params.id}`),
+      },
+      {
+        path: "/categoryDetails/:id",
+        element: (
+          <PrivateRoute>
+            <CategoryDetails />,
+          </PrivateRoute>
+        ),
+        loader: ({ params }) =>
+          fetch(`https://kids-day-server.vercel.app/categoric/${params.id}`),
       },
       {
         path: "/blog",

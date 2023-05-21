@@ -2,6 +2,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../Provider/AuthProvider";
 import { useContext } from "react";
 import { FcGoogle } from "react-icons/fc";
+import useTitle from "../../../hooks/useTitle";
 
 const Login = () => {
   const { userLogin, googleSignUp } = useContext(AuthContext);
@@ -30,6 +31,8 @@ const Login = () => {
   const handleGoogleSignIn = () => {
     googleSignUp();
   };
+
+  useTitle("Login");
 
   return (
     <div className="hero min-h-screen bg-base-200">

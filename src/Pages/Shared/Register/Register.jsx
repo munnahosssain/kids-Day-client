@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../../Provider/AuthProvider";
+import useTitle from "../../../hooks/useTitle";
 
 const Register = () => {
   const { createUser, createProfile } = useContext(AuthContext);
@@ -24,6 +25,8 @@ const Register = () => {
         console.log(errorMessage);
       });
   };
+
+  useTitle("Register");
 
   return (
     <div className="hero min-h-screen bg-base-200">
