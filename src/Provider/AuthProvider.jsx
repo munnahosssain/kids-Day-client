@@ -1,5 +1,3 @@
-/* eslint-disable react/prop-types */
-// eslint-disable-next-line react/prop-types
 import { createContext, useEffect, useState } from "react";
 import app from "../firebase/firebase.config";
 import {
@@ -31,7 +29,7 @@ const AuthProvider = ({ children }) => {
 
   const userLogin = (email, password) => {
     setLoading(true);
-    signInWithEmailAndPassword(auth, email, password);
+    return signInWithEmailAndPassword(auth, email, password);
   };
 
   const createUser = (email, password) => {
@@ -49,12 +47,12 @@ const AuthProvider = ({ children }) => {
   };
 
   useEffect(() => {
-    const subscribe = onAuthStateChanged(auth, userLogin => {
+    const unsubscribe = onAuthStateChanged(auth, userLogin => {
       setUser(userLogin);
       setLoading(false);
     });
     return () => {
-      return subscribe();
+      return unsubscribe();
     };
   }, []);
 

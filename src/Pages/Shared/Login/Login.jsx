@@ -1,12 +1,13 @@
-/* eslint-disable react/no-unescaped-entities */
-// eslint-disable-next-line react/no-unescaped-entities
-import { useContext } from "react";
-import { Link } from "react-router-dom";
-import { FcGoogle } from "react-icons/fc";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../Provider/AuthProvider";
+import { useContext } from "react";
+import { FcGoogle } from "react-icons/fc";
 
 const Login = () => {
   const { userLogin, googleSignUp } = useContext(AuthContext);
+  const location = useLocation();
+  const navigate = useNavigate();
+  const from = location?.state?.from?.pathname || "/";
 
   const handleLogin = event => {
     event.preventDefault();
@@ -18,6 +19,7 @@ const Login = () => {
       .then(result => {
         const user = result.user;
         console.log(user);
+        navigate(from, { replace: true });
       })
       .catch(error => {
         const errorMessage = error.message;
