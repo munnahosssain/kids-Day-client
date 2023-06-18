@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import swal from "sweetalert";
 import useTitle from "../../hooks/useTitle";
+import { AuthContext } from "../../Provider/AuthProvider";
 
 const AddToys = () => {
+  const { user } = useContext(AuthContext);
+
   const handleAdded = event => {
     event.preventDefault();
     const form = event.target;
@@ -81,6 +84,7 @@ const AddToys = () => {
                 type="email"
                 required
                 name="seller_email"
+                value={user?.email}
                 placeholder="Seller Email"
                 className="input w-full max-w-xl input-info"
               />

@@ -15,7 +15,7 @@ const MyToy = ({ toy, index }) => {
       dangerMode: true,
     }).then(willDelete => {
       if (willDelete) {
-        fetch(`http://localhost:5000/deleteToys/${id}`, {
+        fetch(`https://kids-day-server.vercel.app//deleteToys/${id}`, {
           method: "DELETE",
           headers: {
             "Content-Type": "application/json",
