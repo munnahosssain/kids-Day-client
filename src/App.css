@@ -28,3 +28,11 @@
     opacity: 0.9;
     z-index: -1;
 }
+
+.pickToyBg{
+    background-image: url("../public/images/pick-bg.png");
+}
+
+.banner{
+    background-image: url("../public/images/bg-header.png");
+}

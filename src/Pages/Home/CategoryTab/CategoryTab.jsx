@@ -34,7 +34,7 @@ const CategoryTab = () => {
   };
 
   return (
-    <div className="min-h-screen bg-base-200 lg:p-12">
+    <div className=" bg-base-200 lg:p-12">
       <Tabs>
         <TabList>
           <Tab onClick={() => handleTab("Engineering_tools")}>

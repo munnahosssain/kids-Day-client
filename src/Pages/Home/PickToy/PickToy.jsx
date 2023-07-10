@@ -4,12 +4,7 @@ import { Link } from "react-router-dom";
 
 const PickToy = () => {
   return (
-    <div
-      className="hero min-h-screen"
-      style={{
-        backgroundImage: `url("../../../../public/images/pick-bg.png")`,
-      }}
-    >
+    <div className="hero min-h-screen pickToyBg">
       <div className="lg:mx-48">
         <div className="text-neutral-content">
           <div className="lg:grid grid-cols-2 gap-4 items-center">

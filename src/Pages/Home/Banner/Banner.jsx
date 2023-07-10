@@ -16,9 +16,6 @@ const Banner = () => {
       data-aos="zoom-in-up"
       data-aos-duration="1000"
       className="hero min-h-screen banner"
-      style={{
-        backgroundImage: `url("../../../public/images/bg-header.png")`,
-      }}
     >
       <div className="hero-overlay bg-opacity-0"></div>
       <div className="hero-content text-center text-neutral-content">
